@@ -107,10 +107,10 @@ def dijkstra(graph, start_point):
         output += path_travel(list_of_previous_path, end_point) + " : "
         output += str(list_of_distance[end_point])
         print(output)
-        list_of_minimum_path.append(list_of_distance[end_point])
+        # list_of_minimum_path.append(list_of_distance[end_point])
     # End for
         
-    return list_of_minimum_path
+    # return list_of_minimum_path
 # End def
     
 
@@ -137,14 +137,19 @@ def main():
     optimum_path_list = [0]
 
     # while unvisited_list != []:
-    for i in range(len(graph)-1):
-        print("Start point: " + str(optimum_path_list[-1]))
-        optimum_path(len(graph), dijkstra(graph, optimum_path_list[-1]), unvisited_list, optimum_path_list)
+    # for i in range(len(graph)-1):
+    #     print("Start point: " + str(optimum_path_list[-1]))
+    #     optimum_path(len(graph), dijkstra(graph, optimum_path_list[-1]), unvisited_list, optimum_path_list)
+    #     print("---------")
+    # # End for
+    # print("Start point: " + str(optimum_path_list[-1]))
+    # dijkstra(graph, optimum_path_list[-1])
+    # print("---------")
+
+    for i in range(len(graph)):
+        print("Start point: " + str(i))
+        dijkstra(graph, i)
         print("---------")
-    # End for
-    print("Start point: " + str(optimum_path_list[-1]))
-    dijkstra(graph, optimum_path_list[-1])
-    print("---------")
 
 
     optimum_path_list.append(0)
